@@ -12,6 +12,8 @@ spring:
       ddl-auto: update
     show-sql: true
     database: sql_server
+    initialization-mode: always
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
 
 logging:
   level:

@@ -1,4 +1,4 @@
 package oauth.springoauth.config;
 
-public class SecurityConfig {
+public class WebMvcConfig {
 }
