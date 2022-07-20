@@ -1,0 +1,10 @@
+server:
+  port: 8888
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: dab9cc38ee5f397ac560
+            clientSecret: 65bb05facc3b80432cd60bd08e69e809c3c506a5

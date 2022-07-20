@@ -2,11 +2,16 @@ server:
   port: 8081
 
 spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-        # ?? ??? ??? ???? ??? ? ??. Resource Server ?? ?? ????? ??.
-          issuer-uri: http://localhost:8883/auth/realms/baeldung
-        # ??? ???? ???? ?? ???? ??? URI
-          jwk-set-url: http://localhost:8083/auth/realms/baeldung/protocol/openid-connect/certs
+  application:
+    name: organizationservice  # 유레카 에 등록할 서비스 이름
+  profiles:
+    active: default
+  cloud:
+    config:
+eureka:
+  instance:
+    prefer-ip-address: true  # 서비스 이름 대신 서비스 IP 주소 등록
+  client:
+    register-with-eureka: true # 유레카 에 서비스 등록
+    fetch-registry: true
+  service-url: http://localhost:8888/eureka/   # 레지스트리 사본을 로컬로 가져오기
